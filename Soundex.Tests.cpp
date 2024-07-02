@@ -11,7 +11,7 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
  ASSERT_EQ(soundex,"S530");
 }
 
-TEST(Soundex, ShortNameTest) {
+TEST(SoudexTestsuite, ShortNameTest) {
 
   char soundex[5];
 
@@ -19,7 +19,7 @@ TEST(Soundex, ShortNameTest) {
   ASSERT_EQ(soundex,"A000");
 }
 
-TEST(Soundex, casesensitivelowercase)
+TEST(SoudexTestsuite, casesensitivelowercase)
 {
 	  char soundex[5];
 
@@ -27,7 +27,7 @@ TEST(Soundex, casesensitivelowercase)
 	  ASSERT_EQ(soundex,"J525");
 }
 
-TEST(Soundex, specialcharacters)
+TEST(SoudexTestsuite, specialcharacters)
 {
 	  char soundex[5];
 
@@ -35,7 +35,7 @@ TEST(Soundex, specialcharacters)
 	  ASSERT_EQ(soundex,"%240");
 }
 
-TEST(Soundex, longname)
+TEST(SoudexTestsuite, longname)
 {
 	  char soundex[5];
 
