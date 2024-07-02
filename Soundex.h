@@ -18,21 +18,22 @@ char getSoundexCode(char c) {
 
 void generateSoundex(const char *name, char *soundex) {
     int len = (int)strlen(name);
-
-    soundex[0] = (char)toupper(name[0]);
     int sIndex = 1;
     char prevCode = '0';
+    soundex[0] = (char)toupper(name[0]);
 
     for (int i = 1; i < len && sIndex < 4; i++) {
         char code = getSoundexCode(name[i]);
         if (code != '0' && code != prevCode) {
             soundex[sIndex++] = code;
             prevCode = code;
+        } else {
+            prevCode = code;
         }
     }
 
-    for (; sIndex < 4; sIndex++) {
-        soundex[sIndex] = '0';
+    while (sIndex < 4) {
+        soundex[sIndex++] = '0';
     }
 
     soundex[4] = '\0';
